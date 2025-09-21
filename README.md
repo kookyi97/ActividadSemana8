@@ -50,7 +50,11 @@ Este programa cuenta con una interfaz gráfica creada en *PyQt5*, donde se inclu
 - *QTimeEdit* (selector de hora).  
 - *QListWidget* (lista de recordatorios).  
 
-El sistema incluye validaciones, notificaciones emergentes y la posibilidad de agregar, eliminar o limpiar la lista de medicamentos.  
+El sistema incluye:  
+- *Validaciones* para evitar registros incompletos.  
+- *Notificaciones emergentes* (QMessageBox) cuando llega la hora programada.  
+- La posibilidad de *agregar, eliminar o limpiar* la lista de medicamentos.  
+- Un *temporizador (QTimer)* que revisa automáticamente los recordatorios cada minuto.
 
 ---
 
