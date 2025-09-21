@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="https://sgc.ugb.edu.sv/wp-content/uploads/2024/10/UGB_LOGO.png" alt="UGB" width="200">
+</p>
+
 # ActividadSemana8
 
 Repositorio de la Actividad Sumativa Semana 8
@@ -49,8 +54,3 @@ El sistema incluye validaciones, notificaciones emergentes y la posibilidad de a
 
 ---
 
-## 4. Evidencia visual
-
-<p align="center">
-  <img src="https://sgc.ugb.edu.sv/wp-content/uploads/2024/10/UGB_LOGO.png" alt="UGB" width="200">
-</p>
