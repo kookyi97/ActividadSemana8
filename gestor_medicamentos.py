@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import (
     QVBoxLayout, QHBoxLayout, QMessageBox, QTimeEdit, QListWidget
 )
 
-from PyQt5.QtCore import QTime
+from PyQt5.QtCore import QTime, QTimer
 
 class RecordatorioMedicamentos(QWidget):
     def __init__(self):
@@ -70,6 +70,11 @@ class RecordatorioMedicamentos(QWidget):
         # --- Lista interna para almacenar medicamentos ---
         self.medicamentos = [] 
 
+        # --- Timer para notificaciones ---
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.verificar_medicamentos)
+        self.timer.start(60000)  # Verifica cada 60 segundos
+
 
     # --- Función para agregar medicamento con validaciones ---
     def agregar_medicamento(self):
@@ -116,7 +121,13 @@ class RecordatorioMedicamentos(QWidget):
         self.medicamentos.clear()  
         self.lista_medicamentos.clear() 
 
- 
+ # --- Función para verificar medicamentos a la hora actual ---
+    def verificar_medicamentos(self):
+        hora_actual = QTime.currentTime().toString("hh:mm AP")
+        for med in self.medicamentos:
+           if med.endswith(hora_actual):
+             QMessageBox.information(self, "Recordatorio", f"Es hora de tomar: {med}")
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
